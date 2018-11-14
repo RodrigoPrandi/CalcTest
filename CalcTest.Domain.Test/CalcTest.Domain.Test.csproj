@@ -15,7 +15,10 @@
 
   <ItemGroup>
     <Folder Include="Business\Factory\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CalcTest.Domain\CalcTest.Domain.csproj" />
   </ItemGroup>
 
 </Project>
