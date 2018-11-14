@@ -54,6 +54,7 @@ namespace CalcTest.WebApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json",
                     "CalcTest WebApi");
+                c.RoutePrefix = string.Empty;
             });
         }
     }

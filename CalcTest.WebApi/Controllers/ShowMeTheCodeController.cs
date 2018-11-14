@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CalcTest.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class ShowMeTheCodeController : ControllerBase
+    public class ShowMeTheCodeController : ApiController
     {
         // GET: api/ShowMeTheCode
         [HttpGet]
-        public string Get()
+        public IActionResult Get()
         {
-            return "https://github.com/RodrigoPrandi/CalcTest";
+            return Response("https://github.com/RodrigoPrandi/CalcTest");
         }
     }
 }

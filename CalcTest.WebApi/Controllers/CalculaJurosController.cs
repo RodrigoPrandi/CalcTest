@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CalcTest.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class CalculaJurosController : ControllerBase
+    public class CalculaJurosController : ApiController
     {
         // GET: api/ShowMeTheCode
         [HttpGet]
-        public decimal Get(decimal valorInicial, int meses)
+        public IActionResult Get(decimal valorInicial, int meses)
         {
-            return 0;
+            return Response(0);
         }
     }
 }
