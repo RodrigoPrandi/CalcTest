@@ -17,11 +17,12 @@ namespace CalcTest.Domain.Test.Services
         private const decimal RESULTADO = 106;
 
         [Test]
-        public void DeveConstruirRegraDeNegocioPeloCalculoDeJurosFactory()
+        public void DeveConstruirRegraDeNegocioPeloCalculoDeJurosFactoryAoRealizarOCalculo()
         {
             var calculoDeJurosFactoryMock = Substitute.For<ICalculoDeJurosFactory>();
 
             var calculoDeJurosService = new CalculoDeJurosServices(calculoDeJurosFactoryMock);
+            calculoDeJurosService.Calcular(1,2);
 
             calculoDeJurosFactoryMock.Received(1).Build();
         }
