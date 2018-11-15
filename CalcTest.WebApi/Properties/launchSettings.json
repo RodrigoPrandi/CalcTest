@@ -29,7 +29,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}/swagger"
+      "launchUrl": "{Scheme}://localhost:{ServicePort}"
     }
   }
 }
