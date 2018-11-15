@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcTest.WebApi", "CalcTest.WebApi\CalcTest.WebApi.csproj", "{D25C97F5-03F1-435E-8F30-29ED66785902}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcTest.Aplication", "CalcTest.Aplication\CalcTest.Aplication.csproj", "{9A4F5972-40EF-4AC1-9F62-9068CD14EBEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcTest.Application", "CalcTest.Application\CalcTest.Application.csproj", "{9A4F5972-40EF-4AC1-9F62-9068CD14EBEE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcTest.Domain", "CalcTest.Domain\CalcTest.Domain.csproj", "{1A06D780-3A42-4CE7-8F2A-D33E671F8959}"
 EndProject

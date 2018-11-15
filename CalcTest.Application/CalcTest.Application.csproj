@@ -5,15 +5,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\CalcTest.Aplication.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\CalcTest.Application.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.1\CalcTest.Aplication.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.1\CalcTest.Application.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\CalcTest.Domain\CalcTest.Domain.csproj" />
   </ItemGroup>
 
 </Project>

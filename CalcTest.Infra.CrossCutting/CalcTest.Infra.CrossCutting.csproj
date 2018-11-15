@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalcTest.Application\CalcTest.Application.csproj" />
     <ProjectReference Include="..\CalcTest.Domain\CalcTest.Domain.csproj" />
     <ProjectReference Include="..\CalcTest.Infra.Data.InMemory\CalcTest.Infra.Data.InMemory.csproj" />
   </ItemGroup>

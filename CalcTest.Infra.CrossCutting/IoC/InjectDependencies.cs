@@ -1,4 +1,6 @@
-﻿using CalcTest.Domain.Business;
+﻿using CalcTest.Application.Services;
+using CalcTest.Application.Services.Interfaces;
+using CalcTest.Domain.Business;
 using CalcTest.Domain.Business.Factory;
 using CalcTest.Domain.Business.Factory.Interfaces;
 using CalcTest.Domain.Business.Interfaces;
@@ -32,6 +34,9 @@ namespace CalcTest.Infra.CrossCutting.IoC
 
             // Domain Business Services
             services.AddScoped<ICalculoDeJurosServices, CalculoDeJurosServices>();
+
+            //Application Service
+            services.AddScoped<ICalculoDeJurosApplicationService, CalculoDeJurosApplicationService>();
         }
     }
 }
