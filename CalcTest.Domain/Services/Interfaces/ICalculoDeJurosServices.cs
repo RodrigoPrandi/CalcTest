@@ -2,6 +2,6 @@
 {
     public interface ICalculoDeJurosServices
     {
-        decimal Calcular(decimal valorInicial, int quantidadeMeses);
+        double Calcular(decimal valorInicial, int quantidadeMeses);
     }
 }

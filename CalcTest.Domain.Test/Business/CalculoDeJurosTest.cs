@@ -15,7 +15,7 @@ namespace CalcTest.Domain.Test.Business
             var calculoDeJurosBusiness = new CalculoDeJuros(taxaDeJuros);
             var resultadoCalculo = calculoDeJurosBusiness.Calcular(100, 5);
 
-            Assert.AreEqual(105.10, resultadoCalculo);
+            Assert.AreEqual(105.10m, resultadoCalculo);
         }
     }
 }
