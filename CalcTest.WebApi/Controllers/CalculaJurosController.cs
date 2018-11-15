@@ -19,7 +19,12 @@ namespace CalcTest.WebApi.Controllers
             _calculoDeJurosService = calculoDeJurosService;
         }
 
-        // GET: api/ShowMeTheCode
+        /// <summary>
+        /// Teste
+        /// </summary>
+        /// <param name="valorInicial">teste1</param>
+        /// <param name="meses">teste1</param>
+        /// <returns>sdfsdfsdfsd</returns>
         [HttpGet]
         public IActionResult Get(decimal valorInicial, int meses)
         {

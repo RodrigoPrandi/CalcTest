@@ -19,6 +19,6 @@ namespace CalcTest.Domain.Business.Interfaces
         /// <param name="valorInicial">Valor inicial a ser calculado</param>
         /// <param name="quantidadeMeses">Quantidade de meses</param>
         /// <returns>Valor total aplicado o juros no periodo de meses informado</returns>
-        double Calcular(decimal valorInicial, int quantidadeMeses);
+        decimal Calcular(decimal valorInicial, int quantidadeMeses);
     }
 }

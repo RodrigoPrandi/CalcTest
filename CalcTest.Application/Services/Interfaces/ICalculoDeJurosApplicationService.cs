@@ -6,6 +6,6 @@ namespace CalcTest.Application.Services.Interfaces
 {
     public interface ICalculoDeJurosApplicationService
     {
-        double Calcular(decimal valorInicial, int quantidadeMeses);
+        decimal Calcular(decimal valorInicial, int quantidadeMeses);
     }
 }

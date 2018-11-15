@@ -14,7 +14,7 @@ namespace CalcTest.Application.Services
         {
             _calculoDeJurosServices = calculoDeJurosServices;
         }
-        public double Calcular(decimal valorInicial, int quantidadeMeses)
+        public decimal Calcular(decimal valorInicial, int quantidadeMeses)
         {
             return _calculoDeJurosServices.Calcular(valorInicial, quantidadeMeses);
         }

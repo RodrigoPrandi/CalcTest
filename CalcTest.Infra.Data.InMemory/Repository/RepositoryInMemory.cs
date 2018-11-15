@@ -37,9 +37,8 @@ namespace CalcTest.Infra.Data.InMemory.Repository
             return _lista.FirstOrDefault();
         }
 
-        public int SaveChanges()
+        public void SaveChanges()
         {
-            return _lista.Count();
         }
 
         public void Update(TEntity obj)

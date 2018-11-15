@@ -27,7 +27,7 @@ namespace CalcTest.Domain.Services
         /// <param name="valorInicial">Valor inial a ser aplicado o juros </param>
         /// <param name="quantidadeMeses">Quantidade de meses a ser aplicado o juros</param>
         /// <returns>Valor final do calculo de juros pelos meses informado</returns>
-        public double Calcular(decimal valorInicial, int quantidadeMeses)
+        public decimal Calcular(decimal valorInicial, int quantidadeMeses)
         {
             var calculoDeJurosBusiness = _calculoDeJurosFactory.CreateCalculoDeJurosCompostos();
             return calculoDeJurosBusiness.Calcular(valorInicial, quantidadeMeses);

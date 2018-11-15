@@ -4,5 +4,24 @@
         <name>CalcTest.WebApi</name>
     </assembly>
     <members>
+        <member name="M:CalcTest.WebApi.Controllers.CalculaJurosController.Get(System.Decimal,System.Int32)">
+            <summary>
+            Teste
+            </summary>
+            <param name="valorInicial">teste1</param>
+            <param name="meses">teste1</param>
+            <returns>sdfsdfsdfsd</returns>
+        </member>
+        <member name="T:CalcTest.WebApi.Controllers.ShowMeTheCodeController">
+            <summary>
+            Controller responsável por mostrar o link do código fonte no GitHub
+            </summary>
+        </member>
+        <member name="M:CalcTest.WebApi.Controllers.ShowMeTheCodeController.Get">
+            <summary>
+            Retorna a url de onde se encontra o fonde do projeto no GitHub
+            </summary>
+            <returns>Url do código fonte no GitHub</returns>
+        </member>
     </members>
 </doc>

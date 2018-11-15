@@ -7,11 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CalcTest.WebApi.Controllers
 {
+    /// <summary>
+    /// Controller responsável por mostrar o link do código fonte no GitHub
+    /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class ShowMeTheCodeController : ApiController
     {
-        // GET: api/ShowMeTheCode
+        /// <summary>
+        /// Retorna a url de onde se encontra o fonde do projeto no GitHub
+        /// </summary>
+        /// <returns>Url do código fonte no GitHub</returns>
         [HttpGet]
         public IActionResult Get()
         {

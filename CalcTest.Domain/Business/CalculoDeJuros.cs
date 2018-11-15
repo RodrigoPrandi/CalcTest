@@ -30,15 +30,12 @@ namespace CalcTest.Domain.Business
         /// <param name="valorInicial">Valor inicial a ser calculado</param>
         /// <param name="quantidadeMeses">Quantidade de meses</param>
         /// <returns>Valor total aplicado o juros no periodo de meses informado</returns>
-        public double Calcular(decimal valorInicial, int quantidadeMeses)
+        public decimal Calcular(decimal valorInicial, int quantidadeMeses)
         {
             var jurosPercentual = (double)(TaxaAplicada.JurosEfetivo / 100m);
             var resultado = (double)valorInicial * Math.Pow((1 + jurosPercentual), quantidadeMeses);
 
-            resultado = Math.Truncate(100 * resultado);
-            resultado = resultado / 100;
-
-            return resultado;
+            return (decimal)Math.Truncate(100 * resultado)/100;
         }
     }
 }

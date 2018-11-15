@@ -11,7 +11,7 @@ namespace CalcTest.Domain.Test.Services
     {
         private const decimal VALORINICIAL = 105;
         private const int QUANTIDADEMESES = 5;
-        private const double RESULTADO = 106;
+        private const decimal RESULTADO = 106;
 
         [Test]
         public void DeveConstruirRegraDeNegocioPeloCalculoDeJurosFactoryAoRealizarOCalculo()
