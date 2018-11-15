@@ -13,7 +13,7 @@ namespace CalcTest.Domain.Business.Factory
         {
             _taxaDeJurosRepository = taxaDeJurosRepository;
         }
-        public ICalculoDeJuros Build()
+        public ICalculoDeJuros CreateCalculoDeJurosCompostos()
         {
             throw new NotImplementedException();
         }

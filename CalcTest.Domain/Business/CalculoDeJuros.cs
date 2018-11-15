@@ -4,13 +4,16 @@ using CalcTest.Domain.Models;
 
 namespace CalcTest.Domain.Business
 {
-    class CalculoDeJuros : ICalculoDeJuros
+    public class CalculoDeJuros : ICalculoDeJuros
     {
-        private readonly TaxaDeJuros _taxaDeJuros;
+        /// <summary>
+        /// Taxa de juros aplicada no calculo
+        /// </summary>
+        public TaxaDeJuros TaxaAplicada { get; }
 
         public CalculoDeJuros(TaxaDeJuros taxaDeJuros)
         {
-            _taxaDeJuros = taxaDeJuros;
+            TaxaAplicada = taxaDeJuros;
         }
 
         public decimal Calcular(decimal valorInicial, int quantidadeMeses)

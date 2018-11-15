@@ -5,8 +5,9 @@ using CalcTest.Domain.Business.Interfaces;
 
 namespace CalcTest.Domain.Business.Factory.Interfaces
 {
+
     public interface ICalculoDeJurosFactory
     {
-        ICalculoDeJuros Build();
+        ICalculoDeJuros CreateCalculoDeJurosCompostos();
     }
 }

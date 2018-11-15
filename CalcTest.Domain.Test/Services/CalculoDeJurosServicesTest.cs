@@ -3,9 +3,6 @@ using CalcTest.Domain.Business.Interfaces;
 using CalcTest.Domain.Services;
 using NSubstitute;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CalcTest.Domain.Test.Services
 {
@@ -24,7 +21,7 @@ namespace CalcTest.Domain.Test.Services
             var calculoDeJurosService = new CalculoDeJurosServices(calculoDeJurosFactoryMock);
             calculoDeJurosService.Calcular(1,2);
 
-            calculoDeJurosFactoryMock.Received(1).Build();
+            calculoDeJurosFactoryMock.Received(1).CreateCalculoDeJurosCompostos();
         }
 
         [Test]
@@ -33,7 +30,7 @@ namespace CalcTest.Domain.Test.Services
             var calculoDeJurosFactoryMock = Substitute.For<ICalculoDeJurosFactory>();
             var calculoDeJurosBusinessMock = Substitute.For<ICalculoDeJuros>();
             calculoDeJurosBusinessMock.Calcular(VALORINICIAL, QUANTIDADEMESES).Returns(RESULTADO);
-            calculoDeJurosFactoryMock.Build().Returns(calculoDeJurosBusinessMock);
+            calculoDeJurosFactoryMock.CreateCalculoDeJurosCompostos().Returns(calculoDeJurosBusinessMock);
 
             var calculoDeJurosService = new CalculoDeJurosServices(calculoDeJurosFactoryMock);
             var resultadoServico = calculoDeJurosService.Calcular(VALORINICIAL, QUANTIDADEMESES);

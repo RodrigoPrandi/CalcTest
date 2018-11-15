@@ -29,7 +29,7 @@ namespace CalcTest.Domain.Services
         /// <returns>Valor final do calculo de juros pelos meses informado</returns>
         public decimal Calcular(decimal valorInicial, int quantidadeMeses)
         {
-            var calculoDeJurosBusiness = _calculoDeJurosFactory.Build();
+            var calculoDeJurosBusiness = _calculoDeJurosFactory.CreateCalculoDeJurosCompostos();
             return calculoDeJurosBusiness.Calcular(valorInicial, quantidadeMeses);
         }
     }
