@@ -6,7 +6,7 @@ namespace CalcTest.Infra.CrossCutting.Extensions
     {
         public static string FormartStringBr(this decimal valor)
         {
-            return valor.ToString("F", CultureInfo.CreateSpecificCulture("pt-BR"));
+            return valor.ToString("###########0.00", CultureInfo.GetCultureInfo("pt-BR"));
         }
     }
 }
