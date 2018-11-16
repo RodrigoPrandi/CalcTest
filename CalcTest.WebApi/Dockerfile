@@ -16,9 +16,6 @@ RUN dotnet build "CalcTest.WebApi.csproj" -c Release -o /app
 
 FROM build AS publish
 RUN dotnet publish "CalcTest.WebApi.csproj" -c Release -o /app
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
 
 FROM base AS final
 WORKDIR /app
