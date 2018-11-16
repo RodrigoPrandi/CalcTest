@@ -7,7 +7,6 @@ namespace CalcTest.WebApi.Controllers
     /// <summary>
     /// Contoller cálculo de juros
     /// </summary>
-    [Produces("application/json")]
     [Route("[controller]")]
     [ApiController]
     public class CalculaJurosController : ApiController
