@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>CalcTest.WebApi.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\CalcTest.WebApi.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>CalcTest.WebApi.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.1\CalcTest.WebApi.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

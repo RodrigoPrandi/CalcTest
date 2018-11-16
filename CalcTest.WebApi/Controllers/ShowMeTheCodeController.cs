@@ -1,25 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace CalcTest.WebApi.Controllers
 {
     /// <summary>
     /// Controller responsável por mostrar o link do código fonte no GitHub
     /// </summary>
+    [Produces("application/json")]
     [Route("[controller]")]
     [ApiController]
     public class ShowMeTheCodeController : ApiController
     {
         /// <summary>
-        /// Retorna a url de onde se encontra o fonde do projeto no GitHub
+        /// Teste Retorna a url de onde se encontra o fonte do projeto no GitHub
         /// </summary>
+        /// <remarks>
+        /// Exemplo request:
+        ///
+        ///     GET /showmethecode 
+        ///
+        /// </remarks>
         /// <returns>Url do código fonte no GitHub</returns>
+        /// <response code="200">Url do código fonte no GitHub</response>
         [HttpGet]
-        public IActionResult Get()
+        [ProducesResponseType(200)]
+        public ActionResult<string> Get()
         {
             return Response("https://github.com/RodrigoPrandi/CalcTest");
         }
