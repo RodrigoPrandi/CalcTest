@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using CalcTest.Infra.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,10 @@ namespace CalcTest.WebApi
                     Description = "WebApi contendo endpoints para avaliação do novo SoftPlayer!",
                     Contact = new Contact { Name = "Rodrigo Prandi Araújo", Email = "rodrigo.prandi@outlook.com" }
                 });
+                
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                s.IncludeXmlComments(xmlPath);
             });
 
             RegisterDependencies(services);
