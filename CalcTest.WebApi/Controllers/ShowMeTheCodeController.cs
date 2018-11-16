@@ -11,7 +11,7 @@ namespace CalcTest.WebApi.Controllers
     public class ShowMeTheCodeController : ApiController
     {
         /// <summary>
-        /// Teste Retorna a url de onde se encontra o fonte do projeto no GitHub
+        /// Retorna a url de onde se encontra o fonte do projeto no GitHub
         /// </summary>
         /// <remarks>
         /// Exemplo request:
