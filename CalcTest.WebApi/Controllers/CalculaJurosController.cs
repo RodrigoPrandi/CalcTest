@@ -19,14 +19,14 @@ namespace CalcTest.WebApi.Controllers
         }
 
         /// <summary>
-        /// Faz um cálculo em memória de juros compostos, conforme regra: 
-        /// Valor Final = Valor Inicial * (1 + juros) ^ Tempo,
-        ///  onde o juros aplicado será de 1%.
+        /// Faz o cálculo de juros compostos em memória, conforme seguinte regra: 
+        /// Valor Final = Valor Inicial * (1 + juros) ^ Tempo.
+        ///  O juros aplicado será de 1%.
         /// </summary>
         /// <remarks>
         /// Exemplo request:
         ///
-        ///     GET /calculajuros?valorinicial=100 &amp; meses=5 
+        ///     GET /calculajuros?valorinicial=100&amp;meses=5 
         ///
         /// </remarks>
         /// <param name="valorInicial">Valor inicial a ser aplicado juros</param>
