@@ -34,7 +34,7 @@ Deverá retornar a url de onde encontra-se o fonte no github
 * AppVeyor
 * DDD (Domain-Driven-Design)
 * SOLID
-* TDD
+* TDD (Test-Driven-Developmen)
 * Testes unitários
 * Testes de integração
 * Injeção de dependências
