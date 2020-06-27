@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CalcTest.Infra.CrossCutting\CalcTest.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\..\src\CalcTest.Infra.CrossCutting\CalcTest.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CalcTest.WebApi\CalcTest.WebApi.csproj" />
+    <ProjectReference Include="..\..\src\CalcTest.WebApi\CalcTest.WebApi.csproj" />
   </ItemGroup>
 
 </Project>
