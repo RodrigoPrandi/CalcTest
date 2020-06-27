@@ -1,5 +1,5 @@
 # Web API CalcTest
-[![Build status](https://ci.appveyor.com/api/projects/status/79x9ybsoq9be7vvw?svg=true)](https://ci.appveyor.com/project/RodrigoPrandi/calctest)
+![.NET Core](https://github.com/RodrigoPrandi/CalcTest/workflows/.NET%20Core/badge.svg?branch=master)
 
 # Sistema criado para atender as seguintes necessidades:
 
