@@ -29,9 +29,6 @@ namespace CalcTest.Infra.CrossCutting.IoC
             // Domain Business Factory
             services.AddScoped<ICalculoDeJurosFactory, CalculoDeJurosFactory>();
 
-            // Domain Business 
-            services.AddScoped<ICalculoDeJuros, CalculoDeJuros>();
-
             // Domain Business Services
             services.AddScoped<ICalculoDeJurosServices, CalculoDeJurosServices>();
 

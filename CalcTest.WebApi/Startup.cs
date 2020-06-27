@@ -1,13 +1,13 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using CalcTest.Infra.CrossCutting.IoC;
+﻿using CalcTest.Infra.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace CalcTest.WebApi
 {
@@ -23,16 +23,16 @@ namespace CalcTest.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddControllers();
 
             services.AddSwaggerGen(s =>
             {
-                s.SwaggerDoc("v1", new Info
+                s.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "CalcTest WebApi",
                     Description = "WebApi contendo endpoints para avaliação do novo SoftPlayer!",
-                    Contact = new Contact { Name = "Rodrigo Prandi Araújo", Email = "rodrigo.prandi@outlook.com" }
+                    Contact = new OpenApiContact { Name = "Rodrigo Prandi Araújo", Email = "rodrigo.prandi@outlook.com" }
                 });
                 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -49,19 +49,23 @@ namespace CalcTest.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
