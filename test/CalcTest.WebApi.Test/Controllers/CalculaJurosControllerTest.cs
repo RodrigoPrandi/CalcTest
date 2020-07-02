@@ -1,9 +1,13 @@
 ﻿using CalcTest.Application.Services.Interfaces;
+using CalcTest.Domain.Models;
+using CalcTest.Domain.Services.Interfaces;
 using CalcTest.Infra.CrossCutting.Extensions;
 using CalcTest.Infra.CrossCutting.IoC;
 using CalcTest.WebApi.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using NSubstitute;
 using NUnit.Framework;
 
 namespace CalcTest.WebApi.Test.Controllers
@@ -19,8 +23,13 @@ namespace CalcTest.WebApi.Test.Controllers
             IServiceCollection serviceCollection = new ServiceCollection();
             InjectDependencies.RegisterServices(serviceCollection);
 
-            var serviceProvider = serviceCollection.BuildServiceProvider();
+            var taxaDeJurosServices = Substitute.For<ITaxaDeJurosServices>();
+            taxaDeJurosServices.SelecionarTaxaDeJurosAtualizada().Returns(new TaxaDeJuros { JurosEfetivo = 1 });
 
+            serviceCollection.Replace(new ServiceDescriptor(typeof(ITaxaDeJurosServices), taxaDeJurosServices));
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+            
             var apllicationService = serviceProvider.GetService<ICalculoDeJurosApplicationService>();
             _calculaJurosController = new CalculaJurosController(apllicationService);
         }

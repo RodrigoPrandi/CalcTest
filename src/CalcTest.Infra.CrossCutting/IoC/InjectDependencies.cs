@@ -1,13 +1,10 @@
 ﻿using CalcTest.Application.Services;
 using CalcTest.Application.Services.Interfaces;
-using CalcTest.Domain.Business;
 using CalcTest.Domain.Business.Factory;
 using CalcTest.Domain.Business.Factory.Interfaces;
-using CalcTest.Domain.Business.Interfaces;
-using CalcTest.Domain.Repository;
 using CalcTest.Domain.Services;
 using CalcTest.Domain.Services.Interfaces;
-using CalcTest.Infra.Data.InMemory.Repository;
+using CalcTest.Infra.Services.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CalcTest.Infra.CrossCutting.IoC
@@ -23,8 +20,8 @@ namespace CalcTest.Infra.CrossCutting.IoC
         /// <param name="services">Service collection</param>
         public static void RegisterServices(IServiceCollection services)
         {
-            //Repository InMemory
-            services.AddScoped<ITaxaDeJurosRepository, TaxaDeJurosRepositoryInMemory>();
+            //Service Taxa de Juros
+            services.AddScoped<ITaxaDeJurosServices, TaxaDeJurosServices>();
 
             // Domain Business Factory
             services.AddScoped<ICalculoDeJurosFactory, CalculoDeJurosFactory>();

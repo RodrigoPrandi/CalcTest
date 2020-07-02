@@ -1,7 +1,7 @@
 ﻿using CalcTest.Domain.Business;
 using CalcTest.Domain.Business.Factory;
 using CalcTest.Domain.Models;
-using CalcTest.Domain.Repository;
+using CalcTest.Domain.Services.Interfaces;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -14,13 +14,13 @@ namespace CalcTest.Domain.Test.Business.Factory
         public void ValidarFactoryDeJurosCompostosInicializaClasseDeCalcuoDeJurosComATaxaAtualizada()
         {
             var taxadeJuros = new TaxaDeJuros();
-            var taxaDeJurosRepository = Substitute.For<ITaxaDeJurosRepository>();
-            taxaDeJurosRepository.SelecionarTaxaDeJurosAtualizada().Returns(taxadeJuros);
+            var taxaDeJurosServices = Substitute.For<ITaxaDeJurosServices>();
+            taxaDeJurosServices.SelecionarTaxaDeJurosAtualizada().Returns(taxadeJuros);
 
-            var calculoDeJurosService = new CalculoDeJurosFactory(taxaDeJurosRepository);
+            var calculoDeJurosService = new CalculoDeJurosFactory(taxaDeJurosServices);
             var calculoDeJuros = calculoDeJurosService.CreateCalculoDeJurosCompostos();
 
-            taxaDeJurosRepository.Received(1).SelecionarTaxaDeJurosAtualizada();
+            taxaDeJurosServices.Received(1).SelecionarTaxaDeJurosAtualizada();
 
             Assert.IsTrue(calculoDeJuros is CalculoDeJuros);
             Assert.AreEqual(taxadeJuros, calculoDeJuros.TaxaAplicada);

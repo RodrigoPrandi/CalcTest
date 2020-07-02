@@ -1,7 +1,12 @@
 ﻿using CalcTest.Application.Services.Interfaces;
+using CalcTest.Domain.Models;
+using CalcTest.Domain.Services.Interfaces;
 using CalcTest.Infra.CrossCutting.IoC;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using NSubstitute;
 using NUnit.Framework;
+using System;
 
 namespace CalcTest.Domain.Test.Services
 {
@@ -15,6 +20,12 @@ namespace CalcTest.Domain.Test.Services
         {
             IServiceCollection serviceCollection = new ServiceCollection();
             InjectDependencies.RegisterServices(serviceCollection);
+
+            var taxadeJuros = new TaxaDeJuros { JurosEfetivo = 1 };
+            var taxaDeJurosServices = Substitute.For<ITaxaDeJurosServices>();
+            taxaDeJurosServices.SelecionarTaxaDeJurosAtualizada().Returns(taxadeJuros);
+
+            serviceCollection.Replace(new ServiceDescriptor(typeof(ITaxaDeJurosServices), taxaDeJurosServices));
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 

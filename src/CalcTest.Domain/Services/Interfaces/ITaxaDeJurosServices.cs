@@ -1,14 +1,14 @@
 ﻿using CalcTest.Domain.Models;
 
-namespace CalcTest.Domain.Repository
+namespace CalcTest.Domain.Services.Interfaces
 {
     /// <summary>
     /// Repositorio de Taxas de Juros
     /// </summary>
-    public interface ITaxaDeJurosRepository : IRepository<TaxaDeJuros>
+    public interface ITaxaDeJurosServices
     {
         /// <summary>
-        /// Seleciona a taxa de juros atualizada
+        /// Consulta a taxa de juros atualizada
         /// </summary>
         /// <returns>Taxa de juros atualizada no momento da consulta</returns>
         TaxaDeJuros SelecionarTaxaDeJurosAtualizada();

@@ -1,6 +1,6 @@
 ﻿using CalcTest.Domain.Business.Factory.Interfaces;
 using CalcTest.Domain.Business.Interfaces;
-using CalcTest.Domain.Repository;
+using CalcTest.Domain.Services.Interfaces;
 
 namespace CalcTest.Domain.Business.Factory
 {
@@ -9,15 +9,15 @@ namespace CalcTest.Domain.Business.Factory
     /// </summary>
     public class CalculoDeJurosFactory : ICalculoDeJurosFactory
     {
-        private readonly ITaxaDeJurosRepository _taxaDeJurosRepository;
+        private readonly ITaxaDeJurosServices _taxaDeJurosServices;
 
         /// <summary>
         /// Construtor responsável por inicializar as dependências necessárias para criação das classes de cálculo de juros
         /// </summary>
-        /// <param name="taxaDeJurosRepository">Repoisitorio de taxas de juros usado para selecionar a taxa atualizada</param>
-        public CalculoDeJurosFactory(ITaxaDeJurosRepository taxaDeJurosRepository)
+        /// <param name="taxaDeJurosServices">Serviço de taxas de juros usado para selecionar a taxa atualizada</param>
+        public CalculoDeJurosFactory(ITaxaDeJurosServices taxaDeJurosServices)
         {
-            _taxaDeJurosRepository = taxaDeJurosRepository;
+            _taxaDeJurosServices = taxaDeJurosServices;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace CalcTest.Domain.Business.Factory
         /// <returns>Implementação concreta da classe de cálculo de juros compostos</returns>
         public ICalculoDeJuros CreateCalculoDeJurosCompostos()
         {
-            return new CalculoDeJuros(_taxaDeJurosRepository.SelecionarTaxaDeJurosAtualizada());
+            return new CalculoDeJuros(_taxaDeJurosServices.SelecionarTaxaDeJurosAtualizada());
         }
     }
 }
