@@ -12,7 +12,7 @@ namespace CalcTest.Infra.Services.Services
     {
         public TaxaDeJuros SelecionarTaxaDeJurosAtualizada()
         {
-            var urlEndpoint = "https://localhost:44342/taxaJuros";
+            var urlEndpoint = "http://localhost:44342/taxaJuros";
 
             var client = new HttpClient();
 
