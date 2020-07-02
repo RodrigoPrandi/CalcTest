@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /source
 EXPOSE 80
+EXPOSE 443
 
 COPY *.sln .
 COPY src/. ./src/
