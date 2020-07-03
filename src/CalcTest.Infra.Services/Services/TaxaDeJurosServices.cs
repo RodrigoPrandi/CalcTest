@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Net.Http;
 using CalcTest.Domain.Models;
 using CalcTest.Domain.Services.Interfaces;
@@ -30,7 +31,7 @@ namespace CalcTest.Infra.Services.Services
             decimal taxaJuros = 0;
 
             if (response.IsSuccessStatusCode)
-                taxaJuros = Convert.ToDecimal(response.Content.ReadAsStringAsync().Result);
+                taxaJuros = Convert.ToDecimal(response.Content.ReadAsStringAsync().Result, CultureInfo.GetCultureInfo("pt-BR")) * 100 ;
 
             return new TaxaDeJuros
             {
