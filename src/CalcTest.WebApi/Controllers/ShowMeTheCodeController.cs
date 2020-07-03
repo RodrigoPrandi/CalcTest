@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace CalcTest.WebApi.Controllers
 {
@@ -23,9 +24,9 @@ namespace CalcTest.WebApi.Controllers
         /// <response code="200">Url do código fonte no GitHub</response>
         [HttpGet]
         [ProducesResponseType(200)]
-        public ActionResult<string> Get()
+        public ActionResult<List<string>> Get()
         {
-            return Response("https://github.com/RodrigoPrandi/CalcTest");
+            return Response(new List<string> { "https://github.com/RodrigoPrandi/SoftPlanTest", "https://github.com/RodrigoPrandi/CalculaJurosApi", "https://github.com/RodrigoPrandi/TaxaJurosApi" });
         }
     }
 }
