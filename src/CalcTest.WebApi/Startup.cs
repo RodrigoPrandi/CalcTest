@@ -1,4 +1,5 @@
-﻿using CalcTest.Infra.CrossCutting.IoC;
+﻿using CalcTest.Infra.CrossCutting.Config;
+using CalcTest.Infra.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +16,7 @@ namespace CalcTest.WebApi
     {
         public Startup(IConfiguration configuration)
         {
+
             Configuration = configuration;
         }
 
@@ -41,6 +43,13 @@ namespace CalcTest.WebApi
             });
 
             RegisterDependencies(services);
+
+            RegisterConfiguration(services);
+        }
+
+        private void RegisterConfiguration(IServiceCollection services)
+        {
+            InjectConfiguration.RegisterConfiguration(services, Configuration);
         }
 
         private void RegisterDependencies(IServiceCollection services)

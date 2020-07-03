@@ -2,6 +2,8 @@
 using System.Net.Http;
 using CalcTest.Domain.Models;
 using CalcTest.Domain.Services.Interfaces;
+using CalcTest.Infra.Services.Config;
+using Microsoft.Extensions.Options;
 
 namespace CalcTest.Infra.Services.Services
 {
@@ -10,9 +12,16 @@ namespace CalcTest.Infra.Services.Services
     /// </summary>
     public class TaxaDeJurosServices : ITaxaDeJurosServices
     {
+        private readonly ApiTaxaJurosConfiguration apiTaxaJurosConfiguration;
+
+        public TaxaDeJurosServices(IOptions<ApiTaxaJurosConfiguration> apiTaxaJurosConfiguration)
+        {
+            this.apiTaxaJurosConfiguration = apiTaxaJurosConfiguration.Value;
+        }
+
         public TaxaDeJuros SelecionarTaxaDeJurosAtualizada()
         {
-            var urlEndpoint = "http://localhost:44342/taxaJuros";
+            var urlEndpoint = $"http://{apiTaxaJurosConfiguration.UrlTaxaJuros}/taxaJuros";
 
             var client = new HttpClient();
 
